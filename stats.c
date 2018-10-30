@@ -105,4 +105,22 @@ unsigned char find_minimum(unsigned char *ptr, unsigned int size){
 	return min;
 }
 
+/* Function to fing max value in the data*/
+
+unsigned char find_maximum(unsigned char *ptr, unsigned int size) {
+	int i=0, max;
+	if (i = 0) {
+		max = *ptr;
+	}
+	while(i=size){
+		if(*ptr>max){
+			max=*ptr;
+		}
+		i++;
+		ptr++;
+	}
+	return max;
+}
+
+
 
