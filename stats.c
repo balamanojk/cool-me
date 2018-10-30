@@ -38,7 +38,7 @@ void main() {
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
    print_statistics(test,SIZE);
-/*   print_array(test,SIZE);*/
+   print_array(test,SIZE);
 
 }
 
@@ -51,9 +51,10 @@ void print_statistics(unsigned char *ptr, unsigned int size){
 	}
 	sort_array(copy,size);
 	min=find_minimum(copy,size);
-	mean=find_mean(copy,size);
-	median=find_median(copy,size);
 	max=find_maximum(copy,size);
+	median=find_median(copy,size);
+	mean=find_mean(copy,size);
+
 
 
 /*to print the sorted data*/
@@ -108,11 +109,12 @@ unsigned char find_minimum(unsigned char *ptr, unsigned int size){
 /* Function to fing max value in the data*/
 
 unsigned char find_maximum(unsigned char *ptr, unsigned int size) {
-	int i=0, max;
-	if (i = 0) {
-		max = *ptr;
+	int i=0;
+       int max;
+	if (i==0) {
+		max= *ptr;
 	}
-	while(i=size){
+	while(i<size){
 		if(*ptr>max){
 			max=*ptr;
 		}
@@ -123,4 +125,58 @@ unsigned char find_maximum(unsigned char *ptr, unsigned int size) {
 }
 
 
+/* Function to find the mean value from the given set*/
+unsigned char find_mean(unsigned char *ptr, unsigned int size){
+
+	int i=0, mean=0;
+
+    if(ptr== NULL) {
+        return 0;
+    }
+
+    if(size<=0) {
+        size=1;
+    }
+
+    for(i=0;i<size;i++) {
+        mean +=*ptr;
+        ptr++;
+    }
+
+    return (mean/size);
+
+}
+
+
+
+/*Function to Find the median value*/
+unsigned char find_median(unsigned char *ptr, unsigned int size){
+
+  int med;
+  if(size%2==0) {
+      med = (ptr[size/2]+ptr[(size/2)-1])/2;
+  }
+  else {
+      med = ptr[size/2];
+  }
+
+
+  return med;
+}
+
+/*function to Sort the Array*/
+void sort_array(unsigned char *ptr, unsigned int size){
+
+	int i,j;
+    unsigned char temp;
+    for( i=1; i<size; i++ ) {
+        for( j=0; j<size-i; j++ ) {
+            if(*(ptr+j)>=*(ptr+j+1)){
+		     temp=*(ptr+j);
+		     *(ptr+j)=*(ptr+j+1);
+		      *(ptr+j+1)=temp;
+	    }
+       	}
+    }
+}
 
