@@ -9,13 +9,13 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file <stats.c> 
+ * @brief <This file contains the program to analyze the data and print it >
  *
- * <Add Extended Description Here>
+ * <This program reads the data of the array and calculates the mean, median, maximum and minimun values of the data and prints the data in descendiang order >
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author <Manoj Kumar>
+ * @date <10/30/2018 >
  *
  */
 
