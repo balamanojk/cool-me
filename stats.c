@@ -77,4 +77,32 @@ void print_statistics(unsigned char *ptr, unsigned int size){
 
 
 /* Function to print array*/
+void print_array(unsigned char *ptr, unsigned int size){
+	int i;
+	printf("Given Array is: ");
+	for(int i=0; i<size;i++)
+	{
+		printf("%d ", ptr[i]);
+	}
+}
+
+
+unsigned char find_minimum(unsigned char *ptr, unsigned int size){
+	int i=0, min;
+	if(i==0)
+	{
+		min= *ptr;
+	}
+	while(i<size)
+	{
+		if(*ptr<min)
+		{
+			min=*ptr;
+		}
+		i++;
+		ptr++;
+	}
+	return min;
+}
+
 
